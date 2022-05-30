@@ -39,11 +39,11 @@ class ContactForm(forms.Form):
     def send(self):
 
         subject, msg,to_email = self.get_info()
-        # new_email=EmailEventDatabase()
-        # new_email.email=to_email
-        # new_email.no_of_opening=-1
-        # new_email.save()
-        #html_message = render_to_string('contact/mail_template.html',context={'message':msg,'email_event_id':new_email.id}),
+        new_email=EmailEventDatabase()
+        new_email.email=to_email
+        new_email.no_of_opening=-1
+        new_email.save()
+        html_message = render_to_string('contact/mail_template.html',context={'message':msg,'email_event_id':new_email.id}),
         send_mail(
             subject=subject,
             message=msg,

@@ -6,7 +6,7 @@ import uuid
 
 class EmailEventDatabase(models.Model):
     id = models.UUIDField(primary_key = True,default = uuid.uuid4,editable = False)
-    email=models.EmailField(max_length = 254)
+    email=models.EmailField(max_length = 250)
     time=models.DateTimeField(auto_now_add=True)
     no_of_opening=models.IntegerField(default=-1)
     last_opened_time=models.DateTimeField(auto_now=True)
